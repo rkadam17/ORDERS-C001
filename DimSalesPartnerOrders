@@ -1,0 +1,27 @@
+
+SELECT 
+     
+       spo.[VBPA_SDDocument] as "Sales Document"
+      ,spo.[VBPA_Item] as "Sales Document Item"
+      ,spo.[VBPA_Payer] as "Payer"
+      ,spo.[kna1_PayerDesc] as "Payer Desc"
+      ,spo.[VBPA_SoldToParty] as "Sold To Party"
+      ,spo.[kna1_SoldToPartyDesc] as "Sold To Party Desc"
+      ,spo.[VBPA_LogoDeterminationpartner] as "LogoDeterminationpartner"
+      ,spo.[kna1_LogoDeterminationpartnerDesc] as "LogoDeterminationpartnerDesc"
+      ,spo.[VBPA_StormID] as "StormID"
+      ,spo.[kna1_StormIDDesc] as "StormIDDesc"
+     ,spo.[VBPA_ShipToParty] 
+     ,spo.[kna1_ShipToPartyDesc]
+	   ,adrc.[name1] as "Ship to Party Override Name"
+    --,spo.[VBPA_SHAddrNr]
+    --,spo.[VBPA_SHAddressind]
+
+      
+    
+ 
+
+from [cur_mdm].[DimSalesPartnerOrder] spo
+left join [sap_mdm].[ADRC] adrc
+on adrc.[addrnumber] = spo.[VBPA_SHAddrNr]
+
