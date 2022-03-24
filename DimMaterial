@@ -1,0 +1,13 @@
+select
+
+[International_Article_Number] as "Material EAN/UPC (M)",
+[MaterialCategory] as "Material Category",
+[Material_Group_Cd] as "Material Group (M)",
+[Material_Group_Desc] as "Material Group Desc (M)",
+[Material_Type] as "Material Type",
+[T134T_MaterialTypeDesc] as "Material Type Desc",
+[NAICS_Code] as "Material NAICS (M)",
+[NAICSCodeDesc] as "Material NAICS Desc (M)",
+[Material_Description_CHN] as "Material Desc"
+
+from  [cur_mdm].[DimMaterial]
