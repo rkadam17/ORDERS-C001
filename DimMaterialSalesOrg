@@ -1,0 +1,33 @@
+SELECT
+
+MSO.[Sales_Organization],
+MSO.[Brand_Identifier] as "Brand (M)",
+MSO.[BrandDescription] as "Brand Desc (M)",
+MSO.[TVMST_Description] as "D-Chain Spec Status Desc (M)",
+MSO.[Distribution_chain_specific_material_status] as "D-Chain Spec Status (M)",
+MSO.[Hubbell_Product_Manager] as "Product Manager (M)",
+MSO.[Product_Manager_Name] as "Product Manager Desc (M)",
+MSO.[Commission_group] as "Commission Group (M)",
+--COMMISSION GROUP DESC
+MSO.[Product_Line]as "Product Line (M)",
+MSO.[Product_Class] as "Product Class (M)",
+MSO.[Product_Group] as "Product Group (M)",
+MSO.[Product_Family] as "Product Family (M)",
+MSO.[Product_Hierarchy_Description] as "Product_Hierarchy_Description",
+MSO.[Product_Hierarchy] as "Product_Hierarchy",
+MSO.[Product_Line_Description] as "Product Line Desc (M)",
+MSO.[Product_Class_Description] as "Product Class Desc (M)",
+MSO.[Product_Group_Description] as "Product Group Desc (M)",
+MSO.[Product_Family_Description] as "Product Family Desc (M)",
+MSO.[Material_group_1] as "Material Group 1 (M)",
+MSO.[Material_group_2] as "Material Group 2 (M)",
+MSO.[Material_group_3] as "Material Group 3 (M)",
+MSO.[Material_group_4] as "Material Group 4 (M)",
+MSO.[Material_group_5] as "Material Group 5 (M)",
+MSO.[TVM1T_MaterialGroup1Description] as "Material Group 1 Desc (M)",
+MSO.[TVM2T_MaterialGroup2Description] as "Material Group 2 Desc (M)",
+MSO.[TVM3T_MaterialGroup3Description] as "Material Group 3 Desc (M)",
+MSO.[TVM4T_MaterialGroup4Description] as "Material Group 4 Desc (M)",
+MSO.[TVM5T_MaterialGroup5Description] as "Material Group 5 Desc (M)"
+
+FROM [cur_mdm].[DimMaterialSalesOrg] MSO
