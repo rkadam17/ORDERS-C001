@@ -1,0 +1,28 @@
+select
+
+SH.[VBAK_Division] as "Header/Item Division",
+SH.[TSPAT_HeaderDivisionDesc] as "Header/Item Division Desc",
+SH.[VBAK_PurOrdType] as "Purchase Order Type Key",
+SH.[T176T_PurOrdTypeDesc] as "Purchase Order Type Desc",
+SH.[VBAK_Createdon] as "Item level Created on Date",
+SH.[VBAK_OrderReason] as "Order Reason Key",
+SH.[TVAUT_OrderReason_Desc] as "Order Reason Desc",
+SH.[VBAK_CustRefDate] as "PO date Key",
+
+SH.[VBAK_Version] as "Version",
+
+SH.[VBAK_Destination] as "Proj Destination/Ultimate Destination Country",
+SH.[T005T_DestinationCountryDesc] as "Ultimate Destination Country Desc",
+
+SH.[VBAK_ProjectName] as "Project Name",
+SH.[VBAK_ProjectLocation] as "Project Location",
+SH.[VBAK_ProjectState] AS "Project Location - state",
+
+SH.[VBAK_SalesDocument] as "Sales Document"
+
+
+
+
+FROM [cur_mdm].[DimSalesHeader] SH
+where SH.[VBAK_SalesOrg] in ('C510','C550')
+
