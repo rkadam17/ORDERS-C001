@@ -1,0 +1,6 @@
+SELECT
+
+spb.[VBPA_BillToParty] as "Bill To Party",
+spb.[kna1_BillToPartyDesc] as "Bill To Desc"
+
+from [cur_mdm].[DimSalesPartnerBilling] spb
