@@ -1,0 +1,38 @@
+SELECT
+
+        shipto.[VBPA_SDDocument]
+      , shipto.[VBPA_Item]
+      , shipto.[VBPA_ShipToParty]
+      , shipto.[kna1_ShipToPartyDesc]
+      , shipto.[VBPA_SHAddrNr]
+      , shipto.[VBPA_SHAddressind]
+
+      ,cm.[City] as "Ship-To City"
+      ,cm.[Country_Key] as "Ship-To Country"
+      ,cm.[T005T_CountryKeyDesc] as "Ship-To Country Desc"
+      ,cm.[Postal_Code] as "Ship-To Postal Code"
+      ,cm.[Region] as "Ship-To Region"
+      ,cm.[T005U_RegionDesc] as "Ship-To Region Desc"
+      ,cm.[Street] as "Ship-To Street"
+
+,adrc.[name1] as "Ship-To Override Desc"
+,adrc.[city1] as "Ship-To Override City"
+,adrc.[post_code1] as "Ship-To Override PostalCode"
+,adrc.[street] as "Ship-To Override Street"
+,adrc. [country] as "Ship-To Override Country"
+,adrc.[region]  as "Ship-To Override Region"
+
+
+FROM [cur_mdm].[DimSalesPartnerBilling] shipto
+
+left join [cur_mdm].[DimCustomerMaster] cm
+on shipto.[VBPA_ShipToParty] = cm.[Customer_Number]
+
+ left join  [sap_mdm].[ADRC] adrc 
+on adrc.[addrnumber]= shipto.[VBPA_SHAddrNr]
+
+ left join [cur_sdb].[FactBillingItem] BI
+ on BI.[VBRP_BillingDoc]+BI.[VBRP_Item] =  shipto.[VBPA_SDDocument]+shipto.[VBPA_Item]
+ where BI.[VBRK_SalesOrg] in ('C510','C550')
+
+ 
