@@ -31,3 +31,4 @@ MSO.[TVM4T_MaterialGroup4Description] as "Material Group 4 Desc (M)",
 MSO.[TVM5T_MaterialGroup5Description] as "Material Group 5 Desc (M)"
 
 FROM [cur_mdm].[DimMaterialSalesOrg] MSO
+where MSO.[Sales_Organization] in ('C510','C550')
