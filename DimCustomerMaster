@@ -1,0 +1,49 @@
+SELECT 
+        cm.[CustomerID]
+       ,cm.[Customer_Number] as "Sold-To Key"
+       ,cm.[Address]
+       
+      ,cm.[City] as "Sold-To City"
+      ,cm.[Name_1] as "Sold-To Desc"
+      ,cm.[Country_Key] as "Sold-To Country"
+      ,cm.[T005T_CountryKeyDesc] as "Sold-To Country Desc"
+      ,cm.[IndustryCode1] as "Sold-To Industry Code"
+      ,cm.[TBRCT_IndustryCode1Desc] as "Sold-To Industry Code Desc"
+      ,cm.[Postal_Code] as "Sold-To Postal Code"
+      ,cm.[Region] as "Sold-To Region"
+      ,cm.[T005U_RegionDesc] as "Sold-To Region Desc"
+      ,cm.[Street] as "Sold-To Street"
+      ,cm.[Ultimate_DUNS_Number] as "Sold-To Ultimate DUNS #"
+      ,cm.[Ultimate_DUNS_Description] as "Sold-To Ultimate DUNS# Desc"
+      ,cm.[KNA1_CorporateGroup] as "Sold-To Corporate Group"
+      ,cm.[KNA1_CorporateGroupDesc] as "Sold-To Corporate Group Desc"
+      
+     ,cm.[KNA1_AccountGrp] as "Customer Account Group"
+     ,cm.[IndustryCode1]
+      ,cm.[TBRCT_IndustryCode1Desc]
+
+
+,adrc.[name1] as "Sold-To Override Desc"
+,adrc.[city1] as "Sold-To Override City"
+,adrc.[post_code1] as "Sold-To Override PostalCode"
+,adrc.[street] as "Sold-To Override Street"
+,adrc. [country] as "Sold-To Override Country"
+,adrc.[region]  as "Sold-To Override Region"
+
+,cs.[KNVV_SalesOrg] as"SalesOrg"
+
+
+
+
+FROM [cur_mdm].[DimCustomerMaster] cm
+ 
+left join  [sap_mdm].[ADRC] adrc 
+on adrc.[addrnumber]= cm.[Address]
+
+inner join [cur_mdm].[DimCustomerSales] cs
+on cs.[KNVV_Customer] = cm.[Customer_Number]
+
+where cs.[KNVV_SalesOrg] in ('C510','C550')
+
+ 
+  
