@@ -8,7 +8,7 @@ select
 [T001_CompanyCodeDesc] as "Company Code Desc",
 [VBAP_CreatedOn] as "Created on Date",
 [VBAK_Division] as "Item/Header Division",
-[VBAK_DocumentCategory]  as Doc Category",
+[VBAK_DocumentCategory]  as "Doc Category",
 [VBAK_sddoccategoryDesc] as "Doc Category Desc",
 [VBAP_SalesDocument] as "Sales Doc #",
 [VBAK_SalesDocType] as "Sales Doc Type",
