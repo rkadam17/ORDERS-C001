@@ -1,0 +1,63 @@
+SELECT
+
+CS.[KNVV_Customer] as "Customer",
+CS.[KNVV_SalesOrg] as "Sales Org",
+CS.[KNVV_Division] as "Customer Division",
+CS.[KNVV_DistrChannel] as "Distribution Channel",
+
+CS.[KNVV_SalesGroup] as "Sales Group Key (M)",
+CS.[TVGRT_SalesGroupDesc] as "Sales Group Desc (M)",
+CS.[KNVV_SalesOffice] as "Sales Office Key (M)",
+CS.[tvkbt_SalesOfficeDesc] as "Sales Office Desc (M)",
+CS.[KNVV_SalesDistrict] as "Sales District Key (M)",
+CS.[t171t_SalesDistrictDesc] as"Sales District Desc (M)",
+
+
+CS.[KNVV_ABCClass] as "Customer ABC Class Key",
+CS.[KNVV_CustomerGroup] as "Customer Group(M)",
+CS.[T151T_CustomerGroupDesc] as "Customer Group Desc (M)",
+CS.[KNVV_CustomerGrp1] as "Customer Group 1 Key",
+CS.[TVV1T_CustomerGrp1Desc] as "Customer Group 1 Name",
+CS.[KNVV_CustomerGrp2] as "Customer Group 2 Key",
+CS.[TVV2T_CustomerGrp2Desc] as "Customer Group 2 Name",
+CS.[KNVV_CustomerGrp3] as "Customer Group 3 Key",
+CS.[TVV3T_CustomerGrp3Desc] as "Customer Group 3 Name",
+CS.[KNVV_CustomerGrp4] as "Customer Group 4 Key",
+CS.[TVV4T_CustomerGrp4Desc] as"Customer Group 4 Name",
+CS.[KNVV_CustomerGrp5] as "Customer Group 5 Key",
+CS.[TVV5T_CustomerGrp5Desc] as"Customer Group 5 Name",
+
+CS.[KNVV_Incoterms] as "Customer Sales Incoterms (Key)",
+CS.[TINCT_IncotermsDesc] as "Customer Sales Incoterms Name",
+CS.[KNVV_Incoterms2] as "Customer Sales Incoterms 2 (Key)",
+
+CS.[KNVV_CustPriceGrp] as "Customer Price Group",
+
+CS.[KNVP_ExternalSalesRep1] as "Y1 Sales Rep(Master) Key",
+CS.[kna1_ExternalSalesRep1Desc] as "Y1 Sales Rep(Master) Name",
+CS.[KNVP_ExternalSalesRep2] as "Y2 Sales Rep(Master) Key",
+CS.[kna1_ExternalSalesRep2Desc] as "Y2 Sales Rep(Master) Name",
+CS.[KNVP_ExternalSalesRep3] as "Y3 Sales Rep(Master) Key",
+CS.[kna1_ExternalSalesRep3Desc] as "Y3 Sales Rep(Master) Name",
+CS.[KNVP_ExternalSalesRep4] as "Y4 Sales Rep(Master) Key",
+CS.[kna1_ExternalSalesRep4Desc] as "Y4 Sales Rep(Master) Name",
+CS.[KNVP_ExternalSalesRep5] as "Y5 Sales Rep(Master) Key",
+CS.[kna1_ExternalSalesRep5Desc] as "Y5 Sales Rep(Master) Name",
+
+CS.[KNVP_FactorySalesRep1] as "Z1 Sales Rep (M)",
+CS.[kna1_FactorySalesRep1Desc] as "Z1 Sales Rep Desc (M)",
+CS.[KNVP_FactorySalesRep2] as "Z2 Sales Rep (M)",
+CS.[kna1_FactorySalesRep2Desc] as "Z2 Sales Rep Desc (M)",
+CS.[KNVP_FactorySalesRep3] as "Z3 Sales Rep (M)",
+CS.[kna1_FactorySalesRep3Desc] as "Z3 Sales Rep Desc (M)"
+CS.[KNVP_FactorySalesRep4] as "Z4 Sales Rep (M)",
+CS.[kna1_FactorySalesRep4Desc] as"Z4 Sales Rep Desc (M)",
+CS.[KNVP_FactorySalesRep5] as "Z5 Sales Rep (M)",
+CS.[kna1_FactorySalesRep5Desc] as "Z5 Sales Rep Desc (M)",
+
+CS.[HPC_Flag]
+
+
+FROM
+[cur_mdm].[DimCustomerSales] CS 
+WHERE CS.[KNVV_SalesOrg] in ('C510','C550')
