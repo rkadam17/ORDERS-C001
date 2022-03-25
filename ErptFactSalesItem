@@ -47,7 +47,17 @@ select
 [vbap_CurprmshipDate] as "Cur Prm Ship Date",
 [vbap_JobStrorm] as "Job Stock Code",
 [vbap_ProshipDate] as "Pro Ship Date",
-[SalesOrganizationHierarchyKey] as "Reporting Profit Center"
+[SalesOrganizationHierarchyKey] as "Reporting Profit Center",
+
+[VBAP_NetOrderQty] as "Net Order Qty",
+[DebCredit_USD] as "Order Debit & Credits $",
+[DebCreditCost_USD] as "Order Debit & Credits Cost $",
+[GrossOrders_USD] as "Gross Order $",
+[GrossCost_USD] as "Gross Order Cost $",
+[NetCost_USD] as "Net Cost $",
+[NetOrders_USD] as "Net Orders $",
+[MBEW_StandardPrice] as "Standard price"
+
 
  FROM [cur_mas].[ErptFactSalesItem]
  where [VBAK_SalesOrg] in ('C510','C550')
