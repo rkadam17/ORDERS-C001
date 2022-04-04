@@ -49,7 +49,7 @@ CS.[kna1_FactorySalesRep1Desc] as "Z1 Sales Rep Desc (M)",
 CS.[KNVP_FactorySalesRep2] as "Z2 Sales Rep (M)",
 CS.[kna1_FactorySalesRep2Desc] as "Z2 Sales Rep Desc (M)",
 CS.[KNVP_FactorySalesRep3] as "Z3 Sales Rep (M)",
-CS.[kna1_FactorySalesRep3Desc] as "Z3 Sales Rep Desc (M)"
+CS.[kna1_FactorySalesRep3Desc] as "Z3 Sales Rep Desc (M)",
 CS.[KNVP_FactorySalesRep4] as "Z4 Sales Rep (M)",
 CS.[kna1_FactorySalesRep4Desc] as"Z4 Sales Rep Desc (M)",
 CS.[KNVP_FactorySalesRep5] as "Z5 Sales Rep (M)",
