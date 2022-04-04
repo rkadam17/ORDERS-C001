@@ -1,5 +1,5 @@
 SELECT
-
+MP.[Material_ID],
 MP.[MaterialPlantID] as "Planning Plant",
 MP.[Plant_Desciption] as "Plant Description",
 MP.[CAS_Stock_Indicator] as "CAS Number Key",
@@ -7,3 +7,8 @@ MP.[DP_Indicator] as "Demand Planning/GATP Indicator",
 MP.[Configurable_Material] as "Configurable material"
 
 FROM [cur_mdm].[DimMaterialPlant] MP
+left join [cur_mdm].[DimMaterialSalesOrg] mso
+on mso.[Material_ID] = MP.[Material_ID]
+
+WHERE mso.[Sales_Organization] in ('C510','C550')
+
